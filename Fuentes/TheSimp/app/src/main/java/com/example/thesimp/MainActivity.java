@@ -66,16 +66,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 List<String> errores = new ArrayList<>();
                 String cantidad = spinnerCantidad.getSelectedItem().toString().trim();
-                //String url = "https://thesimpsonsquoteapi.glitch.me/quotes";
-                //String nombre = "";
-                String url = "https://rickandmortyapi.com/api/character";
-                String nombre = "results";
+
 
                 int val = 0;
 
                 try {
                     val = Integer.parseInt(spinnerCantidad.getSelectedItem().toString().trim());
 
+                    //String url = "https://thesimpsonsquoteapi.glitch.me/quotes?count=num"+val;
+                    //String nombre = "";
+                    String url = "https://rickandmortyapi.com/api/character";
+                    String nombre = "results";
 
                     JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                         @Override
